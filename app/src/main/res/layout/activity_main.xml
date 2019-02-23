@@ -31,7 +31,10 @@
                 android:layout_height="wrap_content"
                 android:text="Product Group"
                 android:layout_marginLeft="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+                android:textSize="20sp"
+                android:textColor="@color/grren2"
+
+                 />
 
             <Spinner
                 android:id="@+id/spinnerPG"
@@ -44,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:text="Literature"
                 android:layout_marginLeft="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+                android:textSize="20sp"
+                android:textColor="@color/grren2"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,7 +82,8 @@
                 android:layout_height="wrap_content"
                 android:text="Physician Sample"
                 android:layout_marginLeft="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+                android:textSize="20sp"
+                android:textColor="@color/grren2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -112,7 +117,8 @@
                 android:layout_height="wrap_content"
                 android:text="Gift"
                 android:layout_marginLeft="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+                android:textSize="20sp"
+                android:textColor="@color/grren2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -152,7 +158,8 @@
                     android:layout_marginTop="20dp"
                     android:text="Accompanied with"
                     android:layout_marginLeft="10dp"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+                    android:textSize="20sp"
+                    android:textColor="@color/grren2"/>
 
                 <EditText
                     android:id="@+id/editTextAccompained"

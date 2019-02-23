@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView itemtext = (TextView) view;
                 if(position == 0){
 
-                    itemtext.setTextColor(Color.parseColor("#0097a7"));
+                    itemtext.setTextColor(Color.parseColor("#853497"));
                 }
                 else {
                     itemtext.setTextColor(Color.BLACK);
@@ -188,12 +188,39 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
+                TextView itemtext = (TextView) view;
+                if(position == 0){
+
+                    itemtext.setTextColor(Color.parseColor("#853497"));
+                }
+                else {
+                    itemtext.setTextColor(Color.BLACK);
+                }
+
 
                 return view;
             }
         };
         literaturedapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         literature.setAdapter(literaturedapter);
+
+        literature.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String item = parent.getItemAtPosition(position).toString();
+
+                // Showing selected spinner item
+                Toast.makeText(getApplicationContext(),
+                        "Choose : " + item, Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
     void PhysicianSpinnerData()
@@ -206,12 +233,36 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
+                TextView itemtext = (TextView) view;
+                if(position == 0){
+
+                    itemtext.setTextColor(Color.parseColor("#853497"));
+                }
+                else {
+                    itemtext.setTextColor(Color.BLACK);
+                }
+
 
                 return view;
             }
         };
         physiciandapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         physican.setAdapter(physiciandapter);
+        physican.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+
+                // Showing selected spinner item
+                Toast.makeText(getApplicationContext(),
+                        "Choose : " + item, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
     void GiftSpinnerData()
@@ -222,12 +273,38 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
+                TextView itemtext = (TextView) view;
+                if(position == 0){
+
+                    itemtext.setTextColor(Color.parseColor("#853497"));
+                }
+                else {
+                    itemtext.setTextColor(Color.BLACK);
+                }
+
+
 
                 return view;
             }
         };
         giftandapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gift.setAdapter(giftandapter);
+        gift.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+
+                // Showing selected spinner item
+                Toast.makeText(getApplicationContext(),
+                        "Choose : " + item, Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 

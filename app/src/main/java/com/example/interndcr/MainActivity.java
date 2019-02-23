@@ -69,58 +69,103 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void JsonDataParse() {
+
         final JsonObjectRequest request=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+
             @Override
+
             public void onResponse(JSONObject response) {
                 try{
                     JSONArray ProductArray=response.getJSONArray("product_group_list");
                     JSONArray LiteratureArray=response.getJSONArray("literature_list");
                     JSONArray PhysicianArray=response.getJSONArray("physician_sample_list");
                     JSONArray GiftArray=response.getJSONArray("gift_list");
+                    boolean p=true;
                     for(int i=0;i<ProductArray.length();i++)
                     {
                         JSONObject productlist=ProductArray.getJSONObject(i);
 
                         String produuctname=productlist.getString("product_group");
+                        if(DataProductGroup.size()<=ProductArray.length())
+                        {
+                            if(p)
+                            {
+                                DataProductGroup.add("Choose");
+                                p=false;
+
+                            }
+
+                        }
 
 
                             DataProductGroup.add(produuctname);
 
                     }
                     productGroup.setAdapter(new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, DataProductGroup));
-
+                     p=true;
                     for(int i=0;i< LiteratureArray.length();i++)
                     {
                         JSONObject literaturelist= LiteratureArray.getJSONObject(i);
                         String literaturename=literaturelist.getString("literature");
+                        if(DataLiterautre.size()<=LiteratureArray.length())
+                        {
+                            if(p)
+                            {
+                                DataLiterautre.add("Choose");
+                                p=false;
+
+                            }
+
+                        }
 
 
                             DataLiterautre.add(literaturename);
 
                     }
                     literature.setAdapter(new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, DataLiterautre));
-
+                    p=true;
                     for(int i=0;i< PhysicianArray.length();i++)
                     {
                         JSONObject physicianslist= PhysicianArray.getJSONObject(i);
 
                         String physicianname=physicianslist.getString("sample");
+                        if(DataPhysician.size()<=PhysicianArray.length())
+                        {
+                            if(p)
+                            {
+                                DataPhysician.add("Choose");
+                                p=false;
+
+                            }
+
+                        }
 
 
                             DataPhysician.add(physicianname);
 
                     }
                     physican.setAdapter(new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, DataPhysician));
-
+                    p=true;
                     for(int i=0;i< GiftArray.length();i++)
                     {
                         JSONObject giftlist= GiftArray.getJSONObject(i);
                         String giftname=giftlist.getString("gift");
+                        if(DataGift.size()<=GiftArray.length())
+                        {
+                            if(p)
+                            {
+                                DataGift.add("Choose");
+                                p=false;
+
+                            }
+
+                        }
 
                             DataGift.add(giftname);
 
                     }
                     gift.setAdapter(new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, DataGift));
+                    p=true;
                 }catch (Exception e)
                 {
                     e.printStackTrace();
@@ -146,14 +191,6 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
-                TextView itemtext = (TextView) view;
-                if(position == 0){
-
-                    itemtext.setTextColor(Color.parseColor("#853497"));
-                }
-                else {
-                    itemtext.setTextColor(Color.BLACK);
-                }
 
                 return view;
             }
@@ -187,14 +224,7 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
-                TextView itemtext = (TextView) view;
-                if(position == 0){
 
-                    itemtext.setTextColor(Color.parseColor("#853497"));
-                }
-                else {
-                    itemtext.setTextColor(Color.BLACK);
-                }
 
 
                 return view;
@@ -232,15 +262,6 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
-                TextView itemtext = (TextView) view;
-                if(position == 0){
-
-                    itemtext.setTextColor(Color.parseColor("#853497"));
-                }
-                else {
-                    itemtext.setTextColor(Color.BLACK);
-                }
-
 
                 return view;
             }
@@ -272,17 +293,7 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
-                TextView itemtext = (TextView) view;
-                if(position == 0){
-
-                    itemtext.setTextColor(Color.parseColor("#853497"));
-                }
-                else {
-                    itemtext.setTextColor(Color.BLACK);
-                }
-
-
-
+                
                 return view;
             }
         };

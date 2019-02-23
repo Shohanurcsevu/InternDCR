@@ -82,46 +82,45 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject productlist=ProductArray.getJSONObject(i);
 
                         String produuctname=productlist.getString("product_group");
-                        if(DataProductGroup.size()<=ProductArray.length())
-                        {
+
 
                             DataProductGroup.add(produuctname);
-                        }
+
                     }
+                    productGroup.setAdapter(new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, DataProductGroup));
 
                     for(int i=0;i< LiteratureArray.length();i++)
                     {
                         JSONObject literaturelist= LiteratureArray.getJSONObject(i);
                         String literaturename=literaturelist.getString("literature");
-                        if(DataLiterautre.size()<=LiteratureArray.length())
-                        {
+
 
                             DataLiterautre.add(literaturename);
-                        }
+
                     }
+                    literature.setAdapter(new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, DataLiterautre));
 
                     for(int i=0;i< PhysicianArray.length();i++)
                     {
                         JSONObject physicianslist= PhysicianArray.getJSONObject(i);
-                        // int ps_id= ps_list.getInt("id");
+
                         String physicianname=physicianslist.getString("sample");
-                        if(DataPhysician.size()<=PhysicianArray.length())
-                        {
+
 
                             DataPhysician.add(physicianname);
-                        }
+
                     }
+                    physican.setAdapter(new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, DataPhysician));
 
                     for(int i=0;i< GiftArray.length();i++)
                     {
                         JSONObject giftlist= GiftArray.getJSONObject(i);
                         String giftname=giftlist.getString("gift");
-                        if(DataGift.size()<=GiftArray.length())
-                        {
 
                             DataGift.add(giftname);
-                        }
+
                     }
+                    gift.setAdapter(new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, DataGift));
                 }catch (Exception e)
                 {
                     e.printStackTrace();
@@ -165,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         productGroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String item = parent.getItemAtPosition(position).toString();
+                String item = productGroup.getItemAtPosition(productGroup.getSelectedItemPosition()).toString();
 
                 // Showing selected spinner item
                 Toast.makeText(getApplicationContext(),

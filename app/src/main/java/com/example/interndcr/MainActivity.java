@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
          submit.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
+                 Toast.makeText(productGroup.getContext(),"",Toast.LENGTH_LONG).show();
                  Toast.makeText(getApplicationContext(),"done", Toast.LENGTH_LONG).show();
 
 
@@ -149,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 return view;
             }
         };
-        productadapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        productadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         productGroup.setAdapter(productadapter);
 
     }
@@ -166,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                 return view;
             }
         };
-        literaturedapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        literaturedapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         literature.setAdapter(literaturedapter);
 
     }
@@ -200,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
                 return view;
             }
         };
-        giftandapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        giftandapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gift.setAdapter(giftandapter);
 
     }

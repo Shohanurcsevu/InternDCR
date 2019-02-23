@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -146,12 +147,36 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
+                TextView itemtext = (TextView) view;
+                if(position == 0){
+
+                    itemtext.setTextColor(Color.parseColor("#0097a7"));
+                }
+                else {
+                    itemtext.setTextColor(Color.BLACK);
+                }
 
                 return view;
             }
         };
         productadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         productGroup.setAdapter(productadapter);
+
+        productGroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+
+                // Showing selected spinner item
+                Toast.makeText(getApplicationContext(),
+                        "Choose : " + item, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
     void LiteratureSpinnerData()

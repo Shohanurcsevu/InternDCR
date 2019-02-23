@@ -39,7 +39,9 @@
             <Spinner
                 android:id="@+id/spinnerPG"
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/txtLiterature"
@@ -59,7 +61,8 @@
                     android:id="@+id/spinnerLT"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="#000000"/>
 
                 <EditText
                     android:id="@+id/editTextLiterature"
@@ -94,7 +97,8 @@
                     android:id="@+id/spinnerPH"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="#000000"/>
 
                 <EditText
                     android:id="@+id/editTextPhysician"
@@ -129,7 +133,8 @@
                     android:id="@+id/spinnerGift"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="#000000"/>
 
                 <EditText
                     android:id="@+id/editTextGift"

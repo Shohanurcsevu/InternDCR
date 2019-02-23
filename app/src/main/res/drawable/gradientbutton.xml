@@ -8,7 +8,7 @@
         android:type="radial"
         android:startColor="@color/grren2" />
 
-    <corners android:shape="@drawable/roundcorner" />
+    <corners android:radius="@drawable/roundcorner" />
 
     <stroke
         android:width="4dp"

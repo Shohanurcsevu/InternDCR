@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="Product Group"
                 android:layout_marginLeft="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
             <Spinner
                 android:id="@+id/spinnerPG"

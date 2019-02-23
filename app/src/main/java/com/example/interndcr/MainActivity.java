@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
-                
+
                 return view;
             }
         };
